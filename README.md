@@ -32,9 +32,9 @@ python predict.py -d data/GSE7305_OE.csv -m tf -t OE
 
 ### **Example:**
 ```bash
-python predict.py -d data/GSE120103_PE.csv -m xgb -t PE
+python predict.py -d data/GSE7305_OE.csv -m xgb -t OE
 ```
-This will **process the samples in `GSE120103_PE.csv`** using the **XGBoost model for PE**.
+This will **process the samples in `GSE7305_OE.csv`** using the **XGBoost model for OE**.
 
 ---
 
@@ -49,7 +49,7 @@ This will **process the samples in `GSE120103_PE.csv`** using the **XGBoost mode
 │── data/                  # Required files and datasets
 │   ├── dataset_OE.csv         # Training dataset for OE
 │   ├── dataset_PE.csv         # Training dataset for PE
-│   ├── GSE120103_PE.csv       # Test dataset for PE
+│   ├── E-MTAB-694_PE.csv      # Test dataset for PE
 │   ├── GSE7305_OE.csv         # Test dataset for OE
 │   ├── metaData_OE.csv        # Metadata for OE
 │   ├── metaData_PE.csv        # Metadata for PE
@@ -91,15 +91,16 @@ The input **CSV file** must follow this structure:
 - The **first column (`Symbols`) contains gene names**.
 - Samples have unique **custom identifiers** (e.g., `GSM12345`).
 - The model will automatically **clean and align genes** for compatibility.
+- If a dataset has missing gene expression values, this may affect prediction performance.
 
 ---
 
 ## **PE & OE Test Data**
 This repository provides the framework to analyze gene expression profiles for **Patient Endometrium (PE) and Ovarian Endometriosis (OE)**.
 
-- **GSE120103 (PE)** and **GSE7305 (OE)** were used **only as external test datasets**, not for model training.
-- Users can explore these datasets on **GEO (Gene Expression Omnibus)** for further details:
-  - 📌 **[GSE120103 on GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE120103)** (Low-quality data)
+- **E-MTAB-694 (PE)** and **GSE7305 (OE)** were used **only as external test datasets**, not for model training.
+- Users can explore these datasets on **ArrayExpress and GEO (Gene Expression Omnibus)** for further details:
+  - 📌 **[E-MTAB-694 on ArrayExpress](https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-694?query=e-mtab-694)**  
   - 📌 **[GSE7305 on GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE7305)**
 
 🔹 **Users must train their own models** using the provided datasets (`dataset_PE.csv`, `dataset_OE.csv`).
