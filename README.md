@@ -40,7 +40,7 @@ This will **process the samples in `GSE7305_OE.csv`** using the **XGBoost model 
 
 ## **File Structure**
 ```
-📂 GeneExpressionModel/
+📂 ems_oe_pe/
 │── models/                # User's trained models
 │   ├── tf_model_PE.keras  # TensorFlow model for PE
 │   ├── tf_model_OE.keras  # TensorFlow model for OE
