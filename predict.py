@@ -75,8 +75,8 @@ def preprocess(data_path, valid_genes):
     df = pd.read_csv(data_path)
     if "Symbols" not in df.columns:
         raise ValueError("The input CSV file must contain a 'Symbols' column with gene names.")
-    df = clean_gene_symbols(df)
-    df = remove_duplicates(df)
+    df = clean_syms(df)
+    df = rm_dups(df)
     df.set_index("Symbols", inplace=True)
     missing_genes = set(valid_genes) - set(df.index)
     if missing_genes:
